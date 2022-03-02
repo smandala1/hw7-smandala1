@@ -1,4 +1,5 @@
 import flask
+import random 
 
 app = flask.Flask(__name__)
 
@@ -19,6 +20,11 @@ def index():
     # Flask will stop serving this React page correctly
     return flask.render_template("index.html")
 
+@bp.route("/json")
+def randomfacts():
+    factslist = ["Ant's take rest for around 8 Minutes in 12 hour period.", "Coca-Cola was originally green.","	A snail can sleep for three years."]
+    FACT = random.choice(factslist)
+    return flask.jsonify(FACT)
 
 app.register_blueprint(bp)
 
