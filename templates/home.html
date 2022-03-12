@@ -1,0 +1,48 @@
+{% extends "base.html" %} {% block title %}Login{% endblock %} {% block content
+%}
+<html>
+
+<head>
+</head>
+
+<body>
+    <link rel="stylesheet" href="/static/themes.css">
+    <ol>
+        {{title}}
+        <br>
+        {{tagline}}
+        <br>
+        {%for names in genreslist%}
+        {{names}}
+        {% endfor %}
+    </ol>
+    <img src={{picture}}>
+    <br>
+    <a href={{wiki_url}}><button type="button">Wikipedia link!!</button></a>
+</body>
+<form method="POST">
+    <h3 align="center">Comments</h3>
+    <div class="form-group">
+        <label for="Comments"></label>
+        <input type="text" class="form-control" id="comments " name="comments" placeholder="Comments" />
+        <br>
+        <h3 align="center">Ratings</h3>
+        <div class="form-group">
+            <label for="Ratings"></label>
+            <input type="text" class="form-control" id="ratings" name="ratings" placeholder="Ratings" />
+            <style>
+                img {
+                    float: center;
+                    width: 350px;
+                    height: auto;
+
+                }
+
+                h1 {
+                    text-align: center;
+                    display: inline-block;
+                }
+            </style>
+
+</html>
+{% endblock %}
